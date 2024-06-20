@@ -1,35 +1,68 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import * as React from "react";
+import { styled, useTheme } from "@mui/material/styles";
+import Box from "@mui/material/Box";
+import CssBaseline from "@mui/material/CssBaseline";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+
+// =*= -IMPORT UI COMPONENT - =*= //
+import TopBar from "./components/TopBar/TopBar";
+import Sidebar from "./components/Sidebar/Sidebar.jsx";
+import { Typography } from "@mui/material";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [mode, setMode] = React.useState(
+    localStorage.getItem("mode") ?? "light"
+  );
+
+  const theme = React.useMemo(
+    () =>
+      createTheme({
+        palette: {
+          // @ts-ignore
+          mode,
+        },
+      }),
+    [mode]
+  );
+
+  // START MATERIAL UI FUNCTIONS
+  const DrawerHeader = styled("div")(({ theme }) => ({
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "flex-end",
+    padding: theme.spacing(0, 1),
+    // necessary for content to be below app bar
+    ...theme.mixins.toolbar,
+  }));
+
+  const [open, setOpen] = React.useState(false);
+
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
+
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <ThemeProvider theme={theme}>
+      <Box sx={{ display: "flex" }}>
+        <CssBaseline />
+        <TopBar
+          handleDrawerOpen={handleDrawerOpen}
+          open={open}
+          setMode={setMode}
+        />
+        <Sidebar handleDrawerClose={handleDrawerClose} open={open} />
+
+        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+          <DrawerHeader />
+          <Typography paragraph>Mohamed Nabih</Typography>
+        </Box>
+      </Box>
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;
