@@ -112,28 +112,32 @@ export default function Sidebar({ handleDrawerClose, open }) {
           sx={{
             justifyContent: "center",
             alignItems: "center",
-            padding: "10px",
+            padding: "5px",
           }}
         >
           <Avatar
             alt="Mohamed Nabih"
-            src="/static/images/avatar/1.jpg"
+            src="/mohamed.png"
             sx={{
-              width: open ? 66 : 25,
-              height: open ? 66 : 25,
+              width: open ? 66 : 30,
+              height: open ? 66 : 30,
               transition: ".3s",
+              border: "3px solid #1976d2",
             }}
           />
           <Typography
             variant="body1"
             sx={{ display: open ? "block " : "none", transition: ".3s" }}
+            fontWeight={"bold"}
           >
             {" "}
             Mohamed Nabih
           </Typography>
           <Typography
-            variant="body2"
+            variant="body1"
             sx={{ display: open ? "block " : "none", transition: ".3s" }}
+            color={"primary"}
+            fontWeight={"bold"}
           >
             {" "}
             Admin
