@@ -8,6 +8,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import TopBar from "./components/TopBar/TopBar";
 import Sidebar from "./components/Sidebar/Sidebar.jsx";
 import { Typography } from "@mui/material";
+import { Outlet } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = React.useState(
@@ -58,7 +59,7 @@ function App() {
 
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
           <DrawerHeader />
-          <Typography paragraph>Mohamed Nabih</Typography>
+         <Outlet/>
         </Box>
       </Box>
     </ThemeProvider>

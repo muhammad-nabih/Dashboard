@@ -1,6 +1,6 @@
 import { Route } from "react-router-dom";
 import App from "../App.jsx";
-import Dashboard from "../pages/Dashboard.jsx/Dashboard";
+import Dashboard from "../pages/Dashboard/Dashboard.jsx";
 import ManageTeam from "../pages/ManageTeam/ManageTeam";
 import ContactsInformation from "../pages/ContactsInformation/ContactsInformation";
 import InvoicesBalances from "../pages/InvoicesBalances/InvoicesBalances";

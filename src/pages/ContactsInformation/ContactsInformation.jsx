@@ -1,6 +1,16 @@
+import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 
+import { Box } from "@mui/material";
+import { columns, rows } from "./ContactInformationData";
 export default function ContactsInformation() {
   return (
-    <div>ContactsInformation</div>
-  )
+    <Box sx={{ height: 600, width: "100%" }}>
+      <DataGrid
+        slots={{ toolbar: GridToolbar }}
+        rows={rows}
+        // @ts-ignore
+        columns={columns}
+      />
+    </Box>
+  );
 }

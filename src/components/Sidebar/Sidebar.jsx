@@ -22,8 +22,9 @@ import PieChartOutlinedIcon from "@mui/icons-material/PieChartOutlined";
 import ShowChartOutlinedIcon from "@mui/icons-material/ShowChartOutlined";
 import Avatar from "@mui/material/Avatar";
 import { Stack, Typography } from "@mui/material";
-import { useNavigate } from "react-router-dom";
-
+import { useLocation, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { grey } from "@mui/material/colors";
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -76,8 +77,18 @@ const Drawer = styled(MuiDrawer, {
 
 export default function Sidebar({ handleDrawerClose, open }) {
   const theme = useTheme();
+  const { pathname } = useLocation();
+
+  const activeLink = (pathItem) => {
+    return pathname === pathItem
+      ? theme.palette.mode === "dark"
+        ? grey[800]
+        : grey[300]
+      : "transparent";
+  };
+
   const menuItems1 = [
-    { text: "Dashboard", icon: <DashboardOutlinedIcon />, path: "/" },
+    { text: "Dashboard", icon: <DashboardOutlinedIcon />, path: "/dashboard" },
     { text: "Manage Team", icon: <GroupOutlinedIcon />, path: "/manage-team" },
     {
       text: "Contacts Information",
@@ -169,9 +180,7 @@ export default function Sidebar({ handleDrawerClose, open }) {
             Admin
           </Typography>
         </Stack>
-
         <Divider />
-
         <List>
           {menuItems1.map((item) => (
             <ListItem key={item.text} disablePadding sx={{ display: "block" }}>
@@ -180,6 +189,7 @@ export default function Sidebar({ handleDrawerClose, open }) {
                   minHeight: 48,
                   justifyContent: open ? "initial" : "center",
                   px: 2.5,
+                  backgroundColor: activeLink(item.path),
                 }}
                 onClick={() => navigate(item.path)}
               >
@@ -209,6 +219,7 @@ export default function Sidebar({ handleDrawerClose, open }) {
                   minHeight: 48,
                   justifyContent: open ? "initial" : "center",
                   px: 2.5,
+                  backgroundColor: activeLink(item.path),
                 }}
                 onClick={() => navigate(item.path)}
               >
@@ -239,6 +250,7 @@ export default function Sidebar({ handleDrawerClose, open }) {
                   minHeight: 48,
                   justifyContent: open ? "initial" : "center",
                   px: 2.5,
+                  backgroundColor: activeLink(item.path),
                 }}
               >
                 <ListItemIcon
