@@ -22,6 +22,7 @@ import PieChartOutlinedIcon from "@mui/icons-material/PieChartOutlined";
 import ShowChartOutlinedIcon from "@mui/icons-material/ShowChartOutlined";
 import Avatar from "@mui/material/Avatar";
 import { Stack, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -76,25 +77,50 @@ const Drawer = styled(MuiDrawer, {
 export default function Sidebar({ handleDrawerClose, open }) {
   const theme = useTheme();
   const menuItems1 = [
-    { text: "Dashboard", icon: <DashboardOutlinedIcon /> },
-    { text: "Manage Team", icon: <GroupOutlinedIcon /> },
-    { text: "Contacts Information", icon: <ContactsOutlinedIcon /> },
-    { text: "Invoices Balances", icon: <ReceiptOutlinedIcon /> },
+    { text: "Dashboard", icon: <DashboardOutlinedIcon />, path: "/" },
+    { text: "Manage Team", icon: <GroupOutlinedIcon />, path: "/manage-team" },
+    {
+      text: "Contacts Information",
+      icon: <ContactsOutlinedIcon />,
+      path: "/contacts-information",
+    },
+    {
+      text: "Invoices Balances",
+      icon: <ReceiptOutlinedIcon />,
+      path: "/invoices-balances",
+    },
   ];
+
   const menuItems2 = [
-    { text: "Profile Form", icon: <PersonOutlinedIcon /> },
-    { text: "Calendar", icon: <CalendarTodayOutlinedIcon /> },
-    { text: "FAQ Page", icon: <HelpOutlinedIcon /> },
+    {
+      text: "Profile Form",
+      icon: <PersonOutlinedIcon />,
+      path: "/profile-form",
+    },
+    {
+      text: "Calendar",
+      icon: <CalendarTodayOutlinedIcon />,
+      path: "/calendar",
+    },
+    { text: "FAQ Page", icon: <HelpOutlinedIcon />, path: "/faq" },
   ];
 
   const menuItems3 = [
-    { text: "Bar Chart", icon: <BarChartOutlinedIcon /> },
-    { text: "Pie Chart", icon: <PieChartOutlinedIcon /> },
-    { text: "Line Chart", icon: <ShowChartOutlinedIcon /> },
-
-    { text: "Geography Chart", icon: <LegendToggleOutlinedIcon /> },
+    { text: "Bar Chart", icon: <BarChartOutlinedIcon />, path: "/bar-chart" },
+    { text: "Pie Chart", icon: <PieChartOutlinedIcon />, path: "/pie-chart" },
+    {
+      text: "Line Chart",
+      icon: <ShowChartOutlinedIcon />,
+      path: "/line-chart",
+    },
+    {
+      text: "Geography Chart",
+      icon: <LegendToggleOutlinedIcon />,
+      path: "/geography-chart",
+    },
   ];
 
+  const navigate = useNavigate();
   return (
     <>
       <Drawer variant="permanent" open={open}>
@@ -136,7 +162,7 @@ export default function Sidebar({ handleDrawerClose, open }) {
           <Typography
             variant="body1"
             sx={{ display: open ? "block " : "none", transition: ".3s" }}
-            color={"primary"}
+            color={theme.palette.info.main}
             fontWeight={"bold"}
           >
             {" "}
@@ -155,6 +181,7 @@ export default function Sidebar({ handleDrawerClose, open }) {
                   justifyContent: open ? "initial" : "center",
                   px: 2.5,
                 }}
+                onClick={() => navigate(item.path)}
               >
                 <ListItemIcon
                   sx={{
@@ -183,6 +210,7 @@ export default function Sidebar({ handleDrawerClose, open }) {
                   justifyContent: open ? "initial" : "center",
                   px: 2.5,
                 }}
+                onClick={() => navigate(item.path)}
               >
                 <ListItemIcon
                   sx={{
@@ -206,6 +234,7 @@ export default function Sidebar({ handleDrawerClose, open }) {
           {menuItems3.map((item) => (
             <ListItem key={item.text} disablePadding sx={{ display: "block" }}>
               <ListItemButton
+                onClick={() => navigate(item.path)}
                 sx={{
                   minHeight: 48,
                   justifyContent: open ? "initial" : "center",
