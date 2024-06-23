@@ -104,6 +104,8 @@ export default function ProfileForm() {
         {...register("Contact Number", {
           required: true,
           pattern: phonePattern,
+          minLength: 7,
+         maxLength: 15,
         })}
         error={Boolean(errors["Contact Number"])}
         helperText={
