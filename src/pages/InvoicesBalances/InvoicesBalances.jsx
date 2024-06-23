@@ -1,5 +1,4 @@
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
-
 import { Box } from "@mui/material";
 import { columns, rows } from "./InvoicesBalancesData";
 export default function InvoicesBalances() {
