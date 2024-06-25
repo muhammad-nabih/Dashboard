@@ -1,4 +1,4 @@
-import { formatDate } from "@fullcalendar/core";
+import { formatDate } from "../../../node_modules/@fullcalendar/core";
 import { useTheme } from "@emotion/react";
 
 const SidebarEvents = ({ event }) => {
