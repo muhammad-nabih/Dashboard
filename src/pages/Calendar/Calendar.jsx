@@ -4,19 +4,13 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import { INITIAL_EVENTS, createEventId } from "./event-utils";
-import { Box, Paper, Stack } from "@mui/material";
-import EventAvailableOutlinedIcon from "@mui/icons-material/EventAvailableOutlined";
+import { Paper, Stack } from "@mui/material";
 import { useTheme } from "@emotion/react";
-import SidebarEvents from "./SidebarEvent";
 import SidebarCalendar from "./SidebarCalendar";
 import RenderEventContent from "./RenderEventContent";
 const Calendar = () => {
-  // @ts-ignore
-  const { palette } = useTheme();
-
   const [weekendsVisible, setWeekendsVisible] = useState(true);
   const [currentEvents, setCurrentEvents] = useState([]);
-
   const handleWeekendsToggle = () => {
     setWeekendsVisible(!weekendsVisible);
   };
