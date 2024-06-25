@@ -1,5 +1,6 @@
 import { formatDate } from "@fullcalendar/core";
 import { useTheme } from "@emotion/react";
+
 const SidebarEvents = ({ event }) => {
   // @ts-ignore
   const { palette } = useTheme();
@@ -12,7 +13,7 @@ const SidebarEvents = ({ event }) => {
         display: "flex",
         flexWrap: "wrap",
         alignItems: "center",
-        padding: "3px 5px ",
+        padding: "3px 5px",
         marginBottom: "5px",
         borderRadius: "5px",
         backgroundColor: palette.mode === "dark" ? "white" : "#1a252f",
