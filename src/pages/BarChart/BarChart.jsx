@@ -1,6 +1,5 @@
+import Bar from "./Bar";
 
 export default function BarChart() {
-  return (
-    <div>BarChart</div>
-  )
+  return <Bar />;
 }

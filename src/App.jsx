@@ -7,7 +7,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 // =*= -IMPORT UI COMPONENT - =*= //
 import TopBar from "./components/TopBar/TopBar";
 import Sidebar from "./components/Sidebar/Sidebar.jsx";
-import { Typography } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
 import { Outlet } from "react-router-dom";
 
 function App() {
@@ -59,7 +59,7 @@ function App() {
 
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
           <DrawerHeader />
-         <Outlet/>
+          <Outlet />
         </Box>
       </Box>
     </ThemeProvider>

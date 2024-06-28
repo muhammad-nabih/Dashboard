@@ -26,5 +26,6 @@ export const routes = (
     <Route path="pie-chart" element={<PieChart />} />
     <Route path="line-chart" element={<LineChart />} />
     <Route path="geography-chart" element={<GeographyChart />} />
+
   </Route>
 );

@@ -4,7 +4,7 @@ import { Box } from "@mui/material";
 import { columns, rows } from "./ContactInformationData";
 export default function ContactsInformation() {
   return (
-    <Box sx={{ height: 600, width: "100%" }}>
+    <Box sx={{ height: 600, width: "95%" }}>
       <DataGrid
         slots={{ toolbar: GridToolbar }}
         rows={rows}
