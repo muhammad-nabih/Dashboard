@@ -7,7 +7,6 @@ export default function Bar() {
   return (
     <Box sx={{ height:430, width: "95%", margin:"0 auto " }}>
       <ResponsiveBar
-     
         data={chartData}
         keys={["2018", "2019", "2020", "2021", "2022", "2023", "2024"]}
         indexBy="country"

@@ -1,73 +1,125 @@
-import { Box, useTheme } from "@mui/material";
-import { ResponsiveLine } from "@nivo/line";
-import {data} from './LineChartData.js'
-
-export default function LineChart() {
+import { ResponsivePie } from "@nivo/pie";
+import { PieChartData } from "./PieChartData";
+import { Box } from "@mui/material";
+import { useTheme } from "@emotion/react";
+export default function Pie() {
   const theme = useTheme();
   return (
-    <Box sx={{ height: "70vh", width: "95%", marginRight: "auto" }}>
-      <ResponsiveLine
-        data={data}
-        margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
-        xScale={{ type: "point" }}
-        yScale={{
-          type: "linear",
-          min: "auto",
-          max: "auto",
-          stacked: true,
-          reverse: false,
+    <Box sx={{ height: "70vh", width: "95%", margin: "auto" }}>
+      <ResponsivePie
+        data={PieChartData}
+        margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
+        innerRadius={0.5}
+        padAngle={0.7}
+        cornerRadius={3}
+        activeOuterRadiusOffset={8}
+        colors={{ scheme: "blues" }}
+        borderWidth={1}
+        borderColor={{
+          from: "color",
+          // @ts-ignore
+          modifiers: [["darker", "0.6"]],
         }}
-        yFormat=" >-.2f"
-        axisTop={null}
-        axisRight={null}
-        axisBottom={{
-          tickSize: 5,
-          tickPadding: 5,
-          tickRotation: 0,
-          legend: "transportation",
-          legendOffset: 36,
-          legendPosition: "middle",
-          truncateTickAt: 0,
+        arcLinkLabelsSkipAngle={10}
+        // @ts-ignore
+        arcLinkLabelsTextColor={theme.palette.text.primary}
+        arcLinkLabelsThickness={2}
+        arcLinkLabelsColor={{ from: "color" }}
+        arcLabelsSkipAngle={10}
+        arcLabelsTextColor={{
+          from: "color",
+          modifiers: [["darker", 2]],
         }}
-        axisLeft={{
-          tickSize: 5,
-          tickPadding: 5,
-          tickRotation: 0,
-          legend: "count",
-          legendOffset: -45,
-          legendPosition: "middle",
-          truncateTickAt: 0,
-        }}
-        colors={{ scheme: "category10" }}
-        pointSize={10}
-        pointColor={{ theme: "background" }}
-        pointBorderWidth={2}
-        pointBorderColor={{ from: "serieColor" }}
-        pointLabel="data.yFormatted"
-        pointLabelYOffset={-12}
-        enableTouchCrosshair={true}
-        useMesh={true}
+        defs={[
+          {
+            id: "dots",
+            type: "patternDots",
+            background: "inherit",
+            color: "rgba(255, 255, 255, 0.3)",
+            size: 4,
+            padding: 1,
+            stagger: true,
+          },
+          {
+            id: "lines",
+            type: "patternLines",
+            background: "inherit",
+            color: "rgba(255, 255, 255, 0.3)",
+            rotation: -45,
+            lineWidth: 6,
+            spacing: 10,
+          },
+        ]}
+        fill={[
+          {
+            match: {
+              id: "ruby",
+            },
+            id: "dots",
+          },
+          {
+            match: {
+              id: "c",
+            },
+            id: "dots",
+          },
+          {
+            match: {
+              id: "go",
+            },
+            id: "dots",
+          },
+          {
+            match: {
+              id: "python",
+            },
+            id: "dots",
+          },
+          {
+            match: {
+              id: "scala",
+            },
+            id: "lines",
+          },
+          {
+            match: {
+              id: "lisp",
+            },
+            id: "lines",
+          },
+          {
+            match: {
+              id: "elixir",
+            },
+            id: "lines",
+          },
+          {
+            match: {
+              id: "javascript",
+            },
+            id: "lines",
+          },
+        ]}
         legends={[
           {
-            anchor: "bottom-right",
-            direction: "column",
+            anchor: "bottom",
+            direction: "row",
             justify: false,
-            translateX: 100,
-            translateY: 0,
+            translateX: 0,
+            translateY: 56,
             itemsSpacing: 0,
+            itemWidth: 100,
+            itemHeight: 18,
+            itemTextColor: theme.palette.text.primary,
             itemDirection: "left-to-right",
-            itemWidth: 80,
-            itemHeight: 20,
-            itemOpacity: 0.75,
-            symbolSize: 12,
+            itemOpacity: 1,
+            symbolSize: 18,
             symbolShape: "circle",
-            symbolBorderColor: "rgba(0, 0, 0, .5)",
             effects: [
               {
                 on: "hover",
                 style: {
-                  itemBackground: "rgba(0, 0, 0, .03)",
-                  itemOpacity: 1,
+                  itemTextColor: theme.palette.text.secondary,
                 },
               },
             ],
@@ -179,6 +231,7 @@ export default function LineChart() {
             chip: {},
             table: {},
             tableCell: {},
+
             tableCellValue: {},
           },
         }}

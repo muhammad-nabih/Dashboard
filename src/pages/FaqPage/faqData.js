@@ -1,4 +1,4 @@
-const faqData = [
+export const faqData = [
   {
     id: "panel1",
     summary: "General settings",
