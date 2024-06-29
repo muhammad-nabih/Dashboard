@@ -231,7 +231,9 @@ export default function PieChart() {
             chip: {},
             table: {},
             tableCell: {},
+            
             tableCellValue: {},
+
           },
         }}
       />
