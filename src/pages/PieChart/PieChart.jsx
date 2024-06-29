@@ -1,4 +1,4 @@
-import { ResponsivePie } from "../../../node_modules/@nivo/pie";
+import { ResponsivePie } from "@nivo/pie";
 import { PieChartData } from "./PieChartData";
 import { Box } from "@mui/material";
 import { useTheme } from "@emotion/react";
