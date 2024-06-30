@@ -137,7 +137,7 @@ export default function Bar() {
           tickSize: 9,
           tickPadding: 5,
           tickRotation: 0,
-          legend: "البلد",
+          legend: "Country",
           legendPosition: "middle",
           legendOffset: 32,
           
@@ -146,9 +146,9 @@ export default function Bar() {
           tickSize: 5,
           tickPadding: 5,
           tickRotation: 0,
-          legend: "الراتب",
+          legend: "Salary",
           legendPosition: "middle",
-          legendOffset: -45,
+          legendOffset: -50,
         }}
         labelSkipWidth={13}
         labelSkipHeight={15}

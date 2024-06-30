@@ -1,271 +1,209 @@
 export const data = [
   {
-    id: "japan",
+    id: "USA",
     color: "hsl(262, 70%, 50%)",
     data: [
       {
-        x: "plane",
-        y: 37,
+        x: "Frontend",
+        y: 60,
       },
       {
-        x: "helicopter",
-        y: 78,
+        x: "Backend",
+        y: 70,
       },
       {
-        x: "boat",
-        y: 40,
+        x: "Mobile Dev",
+        y: 65,
       },
       {
-        x: "train",
-        y: 128,
+        x: "Data Science",
+        y: 80,
       },
       {
-        x: "subway",
-        y: 253,
-      },
-      {
-        x: "bus",
-        y: 32,
-      },
-      {
-        x: "car",
-        y: 297,
-      },
-      {
-        x: "moto",
-        y: 209,
-      },
-      {
-        x: "bicycle",
-        y: 151,
-      },
-      {
-        x: "horse",
-        y: 209,
-      },
-      {
-        x: "skateboard",
-        y: 155,
-      },
-      {
-        x: "others",
-        y: 282,
+        x: "DevOps",
+        y: 75,
       },
     ],
   },
   {
-    id: "france",
+    id: "France",
     color: "hsl(357, 70%, 50%)",
     data: [
       {
-        x: "plane",
-        y: 245,
+        x: "Frontend",
+        y: 50,
       },
       {
-        x: "helicopter",
-        y: 212,
+        x: "Backend",
+        y: 60,
       },
       {
-        x: "boat",
-        y: 141,
+        x: "Mobile Dev",
+        y: 55,
       },
       {
-        x: "train",
-        y: 155,
+        x: "Data Science",
+        y: 70,
       },
       {
-        x: "subway",
-        y: 140,
-      },
-      {
-        x: "bus",
-        y: 239,
-      },
-      {
-        x: "car",
-        y: 56,
-      },
-      {
-        x: "moto",
-        y: 142,
-      },
-      {
-        x: "bicycle",
-        y: 267,
-      },
-      {
-        x: "horse",
-        y: 251,
-      },
-      {
-        x: "skateboard",
-        y: 224,
-      },
-      {
-        x: "others",
-        y: 266,
+        x: "DevOps",
+        y: 65,
       },
     ],
   },
   {
-    id: "us",
+    id: "Germany",
     color: "hsl(185, 70%, 50%)",
     data: [
       {
-        x: "plane",
-        y: 25,
+        x: "Frontend",
+        y: 40,
       },
       {
-        x: "helicopter",
-        y: 141,
+        x: "Backend",
+        y: 50,
       },
       {
-        x: "boat",
-        y: 174,
+        x: "Mobile Dev",
+        y: 45,
       },
       {
-        x: "train",
-        y: 130,
+        x: "Data Science",
+        y: 60,
       },
       {
-        x: "subway",
-        y: 264,
-      },
-      {
-        x: "bus",
-        y: 66,
-      },
-      {
-        x: "car",
-        y: 146,
-      },
-      {
-        x: "moto",
-        y: 38,
-      },
-      {
-        x: "bicycle",
-        y: 18,
-      },
-      {
-        x: "horse",
-        y: 73,
-      },
-      {
-        x: "skateboard",
-        y: 33,
-      },
-      {
-        x: "others",
-        y: 134,
+        x: "DevOps",
+        y: 55,
       },
     ],
   },
   {
-    id: "germany",
+    id: "Japan",
     color: "hsl(95, 70%, 50%)",
     data: [
       {
-        x: "plane",
-        y: 123,
+        x: "Frontend",
+        y: 30,
       },
       {
-        x: "helicopter",
-        y: 111,
+        x: "Backend",
+        y: 40,
       },
       {
-        x: "boat",
-        y: 122,
+        x: "Mobile Dev",
+        y: 35,
       },
       {
-        x: "train",
-        y: 294,
+        x: "Data Science",
+        y: 50,
       },
       {
-        x: "subway",
-        y: 209,
-      },
-      {
-        x: "bus",
-        y: 238,
-      },
-      {
-        x: "car",
-        y: 143,
-      },
-      {
-        x: "moto",
-        y: 122,
-      },
-      {
-        x: "bicycle",
-        y: 172,
-      },
-      {
-        x: "horse",
-        y: 11,
-      },
-      {
-        x: "skateboard",
-        y: 270,
-      },
-      {
-        x: "others",
-        y: 43,
+        x: "DevOps",
+        y: 45,
       },
     ],
   },
   {
-    id: "norway",
+    id: "India",
     color: "hsl(294, 70%, 50%)",
     data: [
       {
-        x: "plane",
-        y: 220,
+        x: "Frontend",
+        y: 20,
       },
       {
-        x: "helicopter",
-        y: 72,
+        x: "Backend",
+        y: 30,
       },
       {
-        x: "boat",
-        y: 176,
+        x: "Mobile Dev",
+        y: 25,
       },
       {
-        x: "train",
-        y: 218,
+        x: "Data Science",
+        y: 40,
       },
       {
-        x: "subway",
-        y: 216,
+        x: "DevOps",
+        y: 35,
+      },
+    ],
+  },
+  {
+    id: "China",
+    color: "hsl(195, 70%, 50%)",
+    data: [
+      {
+        x: "Frontend",
+        y: 10,
       },
       {
-        x: "bus",
-        y: 296,
+        x: "Backend",
+        y: 20,
       },
       {
-        x: "car",
-        y: 298,
+        x: "Mobile Dev",
+        y: 15,
       },
       {
-        x: "moto",
-        y: 143,
+        x: "Data Science",
+        y: 30,
       },
       {
-        x: "bicycle",
-        y: 28,
+        x: "DevOps",
+        y: 25,
+      },
+    ],
+  },
+  {
+    id: "Canada",
+    color: "hsl(85, 70%, 50%)",
+    data: [
+      {
+        x: "Frontend",
+        y: 15,
       },
       {
-        x: "horse",
-        y: 124,
+        x: "Backend",
+        y: 25,
       },
       {
-        x: "skateboard",
-        y: 51,
+        x: "Mobile Dev",
+        y: 20,
       },
       {
-        x: "others",
-        y: 125,
+        x: "Data Science",
+        y: 35,
+      },
+      {
+        x: "DevOps",
+        y: 30,
+      },
+    ],
+  },
+  {
+    id: "Brazil",
+    color: "hsl(25, 70%, 50%)",
+    data: [
+      {
+        x: "Frontend",
+        y: 25,
+      },
+      {
+        x: "Backend",
+        y: 35,
+      },
+      {
+        x: "Mobile Dev",
+        y: 30,
+      },
+      {
+        x: "Data Science",
+        y: 45,
+      },
+      {
+        x: "DevOps",
+        y: 40,
       },
     ],
   },

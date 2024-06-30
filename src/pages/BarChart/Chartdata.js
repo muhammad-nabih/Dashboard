@@ -1,6 +1,6 @@
 export const chartData = [
   {
-    country: "مصر",
+    country: "EGYPT",
     2018: 1000,
     2019: 1200,
     2020: 1500,
@@ -10,7 +10,7 @@ export const chartData = [
     2024: 2500,
   },
   {
-    country: "السعودية",
+    country: "SAUDI ARABIA",
     2018: 1500,
     2019: 1700,
     2020: 2000,
@@ -20,7 +20,7 @@ export const chartData = [
     2024: 3000,
   },
   {
-    country: "الكويت",
+    country: "KUWAIT",
     2018: 1800,
     2019: 2000,
     2020: 2300,
@@ -30,7 +30,7 @@ export const chartData = [
     2024: 3300,
   },
   {
-    country: "قطر",
+    country: "QATAR",
     2018: 1700,
     2019: 1900,
     2020: 2200,
