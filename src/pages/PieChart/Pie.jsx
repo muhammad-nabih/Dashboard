@@ -110,6 +110,7 @@ export default function Pie() {
             itemsSpacing: 0,
             itemWidth: 100,
             itemHeight: 18,
+            // @ts-ignore
             itemTextColor: theme.palette.text.primary,
             itemDirection: "left-to-right",
             itemOpacity: 1,
@@ -119,6 +120,7 @@ export default function Pie() {
               {
                 on: "hover",
                 style: {
+                  // @ts-ignore
                   itemTextColor: theme.palette.text.secondary,
                 },
               },
@@ -128,6 +130,7 @@ export default function Pie() {
         theme={{
           text: {
             fontSize: 12,
+            // @ts-ignore
             fill: theme.palette.text.primary,
             outlineWidth: 0,
             outlineColor: "transparent",
@@ -135,6 +138,7 @@ export default function Pie() {
           axis: {
             domain: {
               line: {
+                // @ts-ignore
                 stroke: theme.palette.divider,
                 strokeWidth: 1,
               },
@@ -142,6 +146,7 @@ export default function Pie() {
             legend: {
               text: {
                 fontSize: 12,
+                // @ts-ignore
                 fill: theme.palette.text.primary,
                 outlineWidth: 0,
                 outlineColor: "transparent",
@@ -149,11 +154,13 @@ export default function Pie() {
             },
             ticks: {
               line: {
+                // @ts-ignore
                 stroke: theme.palette.divider,
                 strokeWidth: 1,
               },
               text: {
                 fontSize: 11,
+                // @ts-ignore
                 fill: theme.palette.text.primary,
                 outlineWidth: 0,
                 outlineColor: "transparent",
@@ -162,6 +169,7 @@ export default function Pie() {
           },
           grid: {
             line: {
+              // @ts-ignore
               stroke: theme.palette.divider,
               strokeWidth: 1,
             },
@@ -170,6 +178,7 @@ export default function Pie() {
             title: {
               text: {
                 fontSize: 11,
+                // @ts-ignore
                 fill: theme.palette.text.primary,
                 outlineWidth: 0,
                 outlineColor: "transparent",
@@ -177,6 +186,7 @@ export default function Pie() {
             },
             text: {
               fontSize: 12,
+              // @ts-ignore
               fill: theme.palette.text.primary,
               outlineWidth: 0,
               outlineColor: "transparent",
@@ -185,6 +195,7 @@ export default function Pie() {
               line: {},
               text: {
                 fontSize: 10,
+                // @ts-ignore
                 fill: theme.palette.text.primary,
                 outlineWidth: 0,
                 outlineColor: "transparent",
@@ -194,6 +205,7 @@ export default function Pie() {
           annotations: {
             text: {
               fontSize: 13,
+              // @ts-ignore
               fill: theme.palette.text.primary,
               outlineWidth: 2,
               outlineColor: "#ffffff",
@@ -223,7 +235,9 @@ export default function Pie() {
           tooltip: {
             wrapper: {},
             container: {
+              // @ts-ignore
               background: theme.palette.background.default,
+              // @ts-ignore
               color: theme.palette.text.primary,
               fontSize: 12,
             },
