@@ -1,14 +1,18 @@
-import { Box } from "@mui/material";
-import { data } from "./GeographyChartData";
 import { ResponsiveChoropleth } from "@nivo/geo";
-import countries from "./WorldCountry.json";
-import { useTheme } from "@emotion/react";
-
+import { Box, useTheme } from "@mui/material";
+import { data } from "./GeographyChartData";
+import { worldCountry } from "./WorldCountry";
 export default function Geography() {
-    const theme = useTheme();
+  const theme = useTheme();
   return (
     <Box
-      sx={{ height: "70vh", width: "98%", margin: "0 auto", padding: "10px" }}
+      sx={{
+        height: "70vh",
+        width: "98%",
+        margin: "0 auto",
+        border: `1px solid ${theme.palette.text.primary}`,
+        borderRadius: "10px",
+      }}
     >
       <ResponsiveChoropleth
         theme={{
@@ -133,9 +137,8 @@ export default function Geography() {
             tableCellValue: {},
           },
         }}
-        
         data={data}
-        features={countries.features}
+        features={worldCountry.features}
         margin={{ top: 0, right: 0, bottom: 0, left: 0 }}
         colors="nivo"
         domain={[0, 1000000]}
@@ -151,80 +154,26 @@ export default function Geography() {
         borderColor="#152538"
         projectionScale={150}
         // @ts-ignore
-        defs={[
-          {
-            id: "dots",
-            type: "patternDots",
-            background: "inherit",
-            color: "#38bcb2",
-            size: 4,
-            padding: 1,
-            stagger: true,
-          },
-          {
-            id: "lines",
-            type: "patternLines",
-            background: "inherit",
-            color: "#eed312",
-            rotation: -45,
-            lineWidth: 6,
-            spacing: 10,
-          },
-          {
-            id: "gradient",
-            type: "linearGradient",
-            colors: [
-              {
-                offset: 0,
-                color: "#000",
-              },
-              {
-                offset: 100,
-                color: "inherit",
-              },
-            ],
-          },
-        ]}
-        fill={[
-          {
-            match: {
-              id: "CAN",
-            },
-            id: "dots",
-          },
-          {
-            match: {
-              id: "CHN",
-            },
-            id: "lines",
-          },
-          {
-            match: {
-              id: "ATA",
-            },
-            id: "gradient",
-          },
-        ]}
+
         legends={[
           {
             anchor: "bottom-left",
             direction: "column",
             justify: true,
             translateX: 20,
-            translateY: -100,
+            translateY: -20,
             itemsSpacing: 0,
             itemWidth: 94,
             itemHeight: 18,
             itemDirection: "left-to-right",
-            itemTextColor: "#444444",
+            itemTextColor: theme.palette.text.primary,
             itemOpacity: 0.85,
             symbolSize: 18,
             effects: [
               {
                 on: "hover",
                 style: {
-           
-                  itemTextColor: "#000000",
+                  itemTextColor: theme.palette.text.secondary,
                   itemOpacity: 1,
                 },
               },

@@ -1,4 +1,4 @@
-{
+export const worldCountry={
   "type": "FeatureCollection",
   "features": [
     {
