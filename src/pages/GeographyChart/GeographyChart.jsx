@@ -1,5 +1,5 @@
-import React from "react";
+import Geography from "./Geography";
 
 export default function GeographyChart() {
-  return <div>GeographyChart</div>;
+  return <Geography/>
 }
