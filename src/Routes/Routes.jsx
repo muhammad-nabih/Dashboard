@@ -12,10 +12,9 @@ import LineChart from "../pages/LineChart/LineChart";
 import GeographyChart from "../pages/GeographyChart/GeographyChart";
 import ProfileForm from "../pages/ProfileForm/ProfileForm.jsx";
 
-
 export const routes = (
   <Route path="/" element={<App />}>
-    <Route path="dashboard" element={<Dashboard />} />
+    <Route path="/" element={<Dashboard />} />
     <Route path="manage-team" element={<ManageTeam />} />
     <Route path="contacts-information" element={<ContactsInformation />} />
     <Route path="invoices-balances" element={<InvoicesBalances />} />
@@ -26,6 +25,5 @@ export const routes = (
     <Route path="pie-chart" element={<PieChart />} />
     <Route path="line-chart" element={<LineChart />} />
     <Route path="geography-chart" element={<GeographyChart />} />
-
   </Route>
 );

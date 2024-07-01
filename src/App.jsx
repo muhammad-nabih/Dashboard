@@ -7,13 +7,15 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 // =*= -IMPORT UI COMPONENT - =*= //
 import TopBar from "./components/TopBar/TopBar";
 import Sidebar from "./components/Sidebar/Sidebar.jsx";
-import { Stack, Typography } from "@mui/material";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
+
 
 function App() {
   const [mode, setMode] = React.useState(
     localStorage.getItem("mode") ?? "light"
   );
+  const location = useLocation();
+  console.log(location.pathname);
 
   const theme = React.useMemo(
     () =>

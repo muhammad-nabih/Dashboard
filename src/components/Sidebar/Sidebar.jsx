@@ -88,7 +88,7 @@ export default function Sidebar({ handleDrawerClose, open }) {
   };
 
   const menuItems1 = [
-    { text: "Dashboard", icon: <DashboardOutlinedIcon />, path: "/dashboard" },
+    { text: "Dashboard", icon: <DashboardOutlinedIcon />, path: "/" },
     { text: "Manage Team", icon: <GroupOutlinedIcon />, path: "/manage-team" },
     {
       text: "Contacts Information",
