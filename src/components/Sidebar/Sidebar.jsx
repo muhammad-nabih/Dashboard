@@ -21,10 +21,11 @@ import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
 import PieChartOutlinedIcon from "@mui/icons-material/PieChartOutlined";
 import ShowChartOutlinedIcon from "@mui/icons-material/ShowChartOutlined";
 import Avatar from "@mui/material/Avatar";
-import { Stack, Typography } from "@mui/material";
+import { Stack, Tooltip, Typography } from "@mui/material";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { grey } from "@mui/material/colors";
+
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -145,6 +146,7 @@ export default function Sidebar({ handleDrawerClose, open }) {
           </IconButton>
         </DrawerHeader>
         <Divider />
+
         <Stack
           sx={{
             justifyContent: "center",
@@ -167,7 +169,6 @@ export default function Sidebar({ handleDrawerClose, open }) {
             sx={{ display: open ? "block " : "none", transition: ".3s" }}
             fontWeight={"bold"}
           >
-            {" "}
             Mohamed Nabih
           </Typography>
           <Typography
@@ -176,98 +177,116 @@ export default function Sidebar({ handleDrawerClose, open }) {
             color={theme.palette.info.main}
             fontWeight={"bold"}
           >
-            {" "}
             Admin
           </Typography>
         </Stack>
+
         <Divider />
         <List>
           {menuItems1.map((item) => (
-            <ListItem key={item.text} disablePadding sx={{ display: "block" }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? "initial" : "center",
-                  px: 2.5,
-                  backgroundColor: activeLink(item.path),
-                }}
-                onClick={() => navigate(item.path)}
-              >
-                <ListItemIcon
+            <Tooltip
+              key={item.text}
+              placement="right"
+              title={open ? null : item.text}
+            >
+              <ListItem disablePadding sx={{ display: "block" }}>
+                <ListItemButton
                   sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : "auto",
-                    justifyContent: "center",
+                    minHeight: 48,
+                    justifyContent: open ? "initial" : "center",
+                    px: 2.5,
+                    backgroundColor: activeLink(item.path),
                   }}
+                  onClick={() => navigate(item.path)}
                 >
-                  {item.icon}
-                </ListItemIcon>
-                <ListItemText
-                  primary={item.text}
-                  sx={{ opacity: open ? 1 : 0 }}
-                />
-              </ListItemButton>
-            </ListItem>
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 3 : "auto",
+                      justifyContent: "center",
+                    }}
+                  >
+                    {item.icon}
+                  </ListItemIcon>
+                  <ListItemText
+                    primary={item.text}
+                    sx={{ opacity: open ? 1 : 0 }}
+                  />
+                </ListItemButton>
+              </ListItem>
+            </Tooltip>
           ))}
         </List>
         <Divider />
         <List>
           {menuItems2.map((item) => (
-            <ListItem key={item.text} disablePadding sx={{ display: "block" }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? "initial" : "center",
-                  px: 2.5,
-                  backgroundColor: activeLink(item.path),
-                }}
-                onClick={() => navigate(item.path)}
-              >
-                <ListItemIcon
+            <Tooltip
+              key={item.text}
+              placement="right"
+              title={open ? null : item.text}
+            >
+              <ListItem disablePadding sx={{ display: "block" }}>
+                <ListItemButton
                   sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : "auto",
-                    justifyContent: "center",
+                    minHeight: 48,
+                    justifyContent: open ? "initial" : "center",
+                    px: 2.5,
+                    backgroundColor: activeLink(item.path),
                   }}
+                  onClick={() => navigate(item.path)}
                 >
-                  {item.icon}
-                </ListItemIcon>
-                <ListItemText
-                  primary={item.text}
-                  sx={{ opacity: open ? 1 : 0 }}
-                />
-              </ListItemButton>
-            </ListItem>
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 3 : "auto",
+                      justifyContent: "center",
+                    }}
+                  >
+                    {item.icon}
+                  </ListItemIcon>
+                  <ListItemText
+                    primary={item.text}
+                    sx={{ opacity: open ? 1 : 0 }}
+                  />
+                </ListItemButton>
+              </ListItem>
+            </Tooltip>
           ))}
         </List>
         <Divider />
         <List>
           {menuItems3.map((item) => (
-            <ListItem key={item.text} disablePadding sx={{ display: "block" }}>
-              <ListItemButton
-                onClick={() => navigate(item.path)}
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? "initial" : "center",
-                  px: 2.5,
-                  backgroundColor: activeLink(item.path),
-                }}
-              >
-                <ListItemIcon
+            <Tooltip
+              key={item.text}
+              placement="right"
+              title={open ? null : item.text}
+            >
+              <ListItem disablePadding sx={{ display: "block" }}>
+                <ListItemButton
+                  onClick={() => navigate(item.path)}
                   sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : "auto",
-                    justifyContent: "center",
+                    minHeight: 48,
+                    justifyContent: open ? "initial" : "center",
+                    px: 2.5,
+                    backgroundColor: activeLink(item.path),
                   }}
                 >
-                  {item.icon}
-                </ListItemIcon>
-                <ListItemText
-                  primary={item.text}
-                  sx={{ opacity: open ? 1 : 0 }}
-                />
-              </ListItemButton>
-            </ListItem>
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 3 : "auto",
+                      justifyContent: "center",
+                    }}
+                  >
+                    {item.icon}
+                  </ListItemIcon>
+                  <ListItemText
+                    primary={item.text}
+                    sx={{ opacity: open ? 1 : 0 }}
+                  />
+                </ListItemButton>
+              </ListItem>
+            </Tooltip>
           ))}
         </List>
       </Drawer>
