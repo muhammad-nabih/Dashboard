@@ -5,12 +5,12 @@ import { chartData } from './Chartdata';
 export default function Bar() {
   const theme = useTheme()
   return (
-    <Box sx={{ height:430, width: "95%", margin:"0 auto " }}>
+    <Box sx={{ height:430, margin:"0 auto "}}>
       <ResponsiveBar
         data={chartData}
         keys={["2018", "2019", "2020", "2021", "2022", "2023", "2024"]}
         indexBy="country"
-        margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
+        margin={{ top: 50, right: 80, bottom: 50, left: 50 }}
         padding={0.2}
         valueScale={{ type: "linear" }}
         indexScale={{ type: "band", round: true }}
@@ -134,8 +134,8 @@ export default function Bar() {
         axisTop={null}
         axisRight={null}
         axisBottom={{
-          tickSize: 9,
-          tickPadding: 5,
+          tickSize: 4,
+          tickPadding: 3,
           tickRotation: 0,
           legend: "Country",
           legendPosition: "middle",
@@ -143,12 +143,12 @@ export default function Bar() {
           
         }}
         axisLeft={{
-          tickSize: 5,
-          tickPadding: 5,
+          tickSize: 3,
+          tickPadding: 3,
           tickRotation: 0,
           legend: "Salary",
           legendPosition: "middle",
-          legendOffset: -50,
+          legendOffset: -43,
         }}
         labelSkipWidth={13}
         labelSkipHeight={15}

@@ -4,7 +4,7 @@ import PageDescription from "../../components/PageDescription/PageDescription";
 
 export default function LineChart() {
   return (
-    <Stack>
+    <Stack sx={{ overflow: "hidden" }}>
       <PageDescription
         title={"Technology Trend Comparison"}
         description={
