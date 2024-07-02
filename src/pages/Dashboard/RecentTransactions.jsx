@@ -4,12 +4,11 @@ import {
   Typography,
   Box,
   Paper,
-  IconButton,
+  Avatar,
   List,
   ListItem,
   ListItemText,
   ListItemAvatar,
-  Avatar,
   ListItemSecondaryAction,
   Divider,
 } from "@mui/material";
@@ -32,19 +31,27 @@ const transactions = [
   { id: "05j0odetuv", user: "dave", date: "2023-05-18", amount: "$90.45" },
   { id: "06k1pfugwx", user: "eve", date: "2023-06-30", amount: "$65.30" },
 ];
+
 export default function RecentTransactions() {
   const theme = useTheme();
   return (
-    <Container>
-      <Box display="flex" justifyContent="space-between" alignItems="center">
+    <Container component="main" aria-labelledby="main-header">
+      <Box
+        component="header"
+        display="flex"
+        justifyContent="space-between"
+        alignItems="center"
+      >
         <Typography
           sx={{
             color: theme.palette.primary.main,
             marginBottom: "10px",
-            padding:"11px",
+            padding: "11px",
             fontWeight: "bold",
           }}
           variant="h5"
+          component="h1"
+          id="main-header"
         >
           Recent Transactions
         </Typography>
@@ -56,32 +63,56 @@ export default function RecentTransactions() {
           overflow: "auto",
           height: "435px",
         }}
+        component="section"
+        aria-labelledby="recent-transactions-title"
       >
-        <List sx={{ padding: "0 " }}>
+        <Typography
+          id="recent-transactions-title"
+          variant="h5"
+          component="h2"
+          sx={{ display: "none" }}
+        >
+          Transactions List
+        </Typography>
+        <List component="ul" style={{ padding: "0" }}>
           {transactions.map((transaction) => (
-            <div key={transaction.id}>
+            <li
+              key={transaction.id}
+              aria-label={`Transaction by ${transaction.user} on ${transaction.date}`}
+            >
               <ListItem>
                 <ListItemAvatar>
-                  <Avatar sx={{ bgcolor: red[700] }}>
+                  <Avatar
+                    sx={{ bgcolor: red[700] }}
+                    aria-label={`${transaction.user} avatar`}
+                  >
                     {transaction.user.charAt(0).toUpperCase()}
                   </Avatar>
                 </ListItemAvatar>
 
                 <ListItemText
-                  primary={transaction.user.toUpperCase()}
+                  primary={transaction.user}
                   secondary={transaction.date}
+                  primaryTypographyProps={{
+                    component: "p",
+                    role: "heading",
+                    "aria-level": 3,
+                  }}
+                  secondaryTypographyProps={{
+                    component: "p",
+                    role: "heading",
+                    "aria-level": 4,
+                  }}
                 />
 
                 <ListItemSecondaryAction>
-                  <IconButton edge="end" disabled>
-                    <Typography variant="body1" color="textPrimary">
-                      {transaction.amount}
-                    </Typography>
-                  </IconButton>
+                  <Typography variant="body1" color="textPrimary">
+                    {transaction.amount}
+                  </Typography>
                 </ListItemSecondaryAction>
               </ListItem>
-              <Divider />
-            </div>
+              <Divider component="li" />
+            </li>
           ))}
         </List>
       </Paper>

@@ -13,9 +13,11 @@ export default function MainSection() {
         variant="contained"
         sx={{ padding: "8px 10px" }}
         startIcon={<DownloadOutlined />}
+        aria-label="Download Reports"
       >
         Download Reports
       </Button>
     </Stack>
   );
 }
+

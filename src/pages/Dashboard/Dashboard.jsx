@@ -25,12 +25,13 @@ export default function Dashboard() {
         <Grid xs={12} sm={12} md={6} lg={8}>
           <Paper
             sx={{ height: "500px", display: "flex", alignItems: "center" }}
+            aria-label="Line Chart"
           >
             <Line />
           </Paper>
         </Grid>
         <Grid xs={12} sm={12} md={6} lg={4}>
-          <Paper sx={{ height: "500px" }}>
+          <Paper sx={{ height: "500px" }} aria-label="Recent Transactions">
             <RecentTransactions />
           </Paper>
         </Grid>
@@ -46,6 +47,7 @@ export default function Dashboard() {
             marginBottom: "10px",
             padding: "30px 20px",
           }}
+          aria-label="Geography Chart"
         >
           <Geography isNotDashboard />
         </Paper>
@@ -58,13 +60,14 @@ export default function Dashboard() {
             marginBottom: "10px",
             padding: "30px 20px",
           }}
+          aria-label="Programmers Salary Bar Chart"
         >
           <Typography
+          component={"h3"}
             variant="h5"
             color={theme.palette.secondary.main}
             fontWeight={"bold"}
           >
-            {" "}
             Programmers Salary
           </Typography>
           <Bar isNotDashboard={false} />
@@ -78,13 +81,14 @@ export default function Dashboard() {
             marginBottom: "10px",
             padding: "30px 20px",
           }}
+          aria-label="Campaign Pie Chart"
         >
           <Typography
+          component={"h3"}
             variant="h5"
             color={theme.palette.secondary.main}
             fontWeight={"bold"}
           >
-            {" "}
             Campaign
           </Typography>
           <Pie isNotDashboard={true} scheme={"nivo"} />

@@ -10,7 +10,6 @@ import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
-import { useEffect } from "react";
 
 const drawerWidth = 240;
 
@@ -75,6 +74,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function TopBar({ open, handleDrawerOpen, setMode }) {
   const { mode } = useTheme().palette;
+  const theme = useTheme();
 
   return (
     <AppBar
@@ -102,7 +102,11 @@ export default function TopBar({ open, handleDrawerOpen, setMode }) {
               <SearchIcon aria-hidden="true" />
             </SearchIconWrapper>
             <StyledInputBase
+              sx={{ opacity: 0.9, color: theme.palette.text.primary }}
+              id="search"
               placeholder="Search…"
+              aria-label="search"
+              role="search"
               inputProps={{ "aria-label": "search" }}
             />
           </Search>

@@ -22,6 +22,7 @@ export default function Card({
         backgroundColor: theme.palette.background.paper,
         flexGrow: 1,
       }}
+      aria-label={`Card: ${title}`}
     >
       <Stack direction={"column"} sx={{ alignItems: "start", gap: "18px" }}>
         <Box>{children}</Box>
@@ -29,7 +30,7 @@ export default function Card({
         <Typography>{title}</Typography>
       </Stack>
 
-      <Stack direction={"column"} sx={{ alignItems: "center",  }}>
+      <Stack direction={"column"} sx={{ alignItems: "center" }}>
         <Box sx={{ height: 100, width: 100 }}>
           <Pie scheme={scheme} isNotDashboard={isNotDashboard} />
         </Box>
@@ -38,3 +39,4 @@ export default function Card({
     </Paper>
   );
 }
+

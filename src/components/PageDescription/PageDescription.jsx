@@ -4,14 +4,14 @@ export default function PageDescription({ title, description }) {
   const theme = useTheme();
   return (
     <Box>
-      <h2
+      <h1
         style={{
           color: theme.palette.primary.main,
           textTransform: "uppercase",
         }}
       >
         {title}
-      </h2>
+      </h1>
       <p
         style={{
           color: theme.palette.text.secondary,

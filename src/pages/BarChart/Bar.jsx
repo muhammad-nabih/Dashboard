@@ -1,11 +1,22 @@
-import { useTheme, Box } from "@mui/material";
+import { useTheme, Box, Typography } from "@mui/material";
 import { ResponsiveBar } from "@nivo/bar";
 import { chartData } from "./Chartdata";
 
 export default function Bar({ isNotDashboard = true }) {
   const theme = useTheme();
   return (
-    <Box sx={{ height: 430, margin: "0 auto " }}>
+    <Box
+      sx={{ height: 430, margin: "0 auto" }}
+      aria-labelledby="bar-chart-title"
+    >
+      <Typography
+        variant="h5"
+        component="h2"
+        id="bar-chart-title"
+        sx={{ display: "none" }}
+      >
+        Bar Chart
+      </Typography>
       <ResponsiveBar
         data={chartData}
         keys={["2018", "2019", "2020", "2021", "2022", "2023", "2024"]}
@@ -160,25 +171,26 @@ export default function Bar({ isNotDashboard = true }) {
         }}
         legends={
           isNotDashboard
-            ?
-      [
+            ? [
                 {
                   dataFrom: "keys",
                   anchor: "bottom-right",
                   direction: "column",
                   justify: false,
-                  translateX: 120,
-                  translateY: 0,
+                  translateX: 190,
+                  translateY: -23,
                   itemsSpacing: 2,
                   itemWidth: 100,
-                  itemHeight: 20,
+                  itemHeight: 15,
                   itemDirection: "left-to-right",
                   itemOpacity: 0.85,
-                  symbolSize: 20,
+                  itemTextColor: theme.palette.text.primary,
+                  symbolSize: 9,
                   effects: [
                     {
                       on: "hover",
                       style: {
+                        itemTextColor: theme.palette.text.secondary,
                         itemOpacity: 1,
                       },
                     },
@@ -187,11 +199,8 @@ export default function Bar({ isNotDashboard = true }) {
               ]
             : []
         }
-        role="application"
-        ariaLabel="Nivo bar chart demo"
-        barAriaLabel={(e) =>
-          `${e.id}: ${e.formattedValue} في البلد: ${e.indexValue}`
-        }
+        role="img"
+        aria-label="Bar chart showing salary data by country"
       />
     </Box>
   );
