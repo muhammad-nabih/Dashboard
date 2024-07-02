@@ -9,7 +9,6 @@ import TopBar from "./components/TopBar/TopBar";
 import Sidebar from "./components/Sidebar/Sidebar.jsx";
 import { Outlet, useLocation } from "react-router-dom";
 
-
 function App() {
   const [mode, setMode] = React.useState(
     localStorage.getItem("mode") ?? "light"
@@ -59,7 +58,7 @@ function App() {
         />
         <Sidebar handleDrawerClose={handleDrawerClose} open={open} />
 
-        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+        <Box component="main" sx={{ flexGrow: 1, p: 3, overflow: "hidden" }}>
           <DrawerHeader />
           <Outlet />
         </Box>
