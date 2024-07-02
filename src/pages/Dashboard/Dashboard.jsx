@@ -63,8 +63,10 @@ export default function Dashboard() {
           aria-label="Programmers Salary Bar Chart"
         >
           <Typography
-          component={"h3"}
-            variant="h5"
+          component={"p"}
+          sx={{fontSize:"25px"}}
+          variant="body2"
+           
             color={theme.palette.secondary.main}
             fontWeight={"bold"}
           >
@@ -84,8 +86,10 @@ export default function Dashboard() {
           aria-label="Campaign Pie Chart"
         >
           <Typography
-          component={"h3"}
-            variant="h5"
+          component={"p"}
+          sx={{fontSize:"25px"}}
+          variant="body2"
+   
             color={theme.palette.secondary.main}
             fontWeight={"bold"}
           >

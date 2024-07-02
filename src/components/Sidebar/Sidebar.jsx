@@ -23,7 +23,6 @@ import ShowChartOutlinedIcon from "@mui/icons-material/ShowChartOutlined";
 import Avatar from "@mui/material/Avatar";
 import { Stack, Tooltip, Typography } from "@mui/material";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useEffect } from "react";
 import { grey } from "@mui/material/colors";
 
 const drawerWidth = 240;

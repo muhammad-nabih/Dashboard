@@ -5,7 +5,6 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import { INITIAL_EVENTS, createEventId } from "./event-utils";
 import { Paper, Stack } from "@mui/material";
-import { useTheme } from "@emotion/react";
 import SidebarCalendar from "./SidebarCalendar";
 import RenderEventContent from "./RenderEventContent";
 const Calendar = () => {

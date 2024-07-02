@@ -4,15 +4,15 @@ import {
   Typography,
   Box,
   Paper,
-  Avatar,
   List,
   ListItem,
   ListItemText,
   ListItemAvatar,
-  ListItemSecondaryAction,
   Divider,
+  Stack,
 } from "@mui/material";
-import { red } from "@mui/material/colors";
+import { blue, red } from "@mui/material/colors";
+import React from "react";
 
 const transactions = [
   { id: "01e4dsaewf", user: "johndoe", date: "2021-09-01", amount: "$43.91" },
@@ -61,7 +61,7 @@ export default function RecentTransactions() {
         sx={{
           backgroundColor: theme.palette.background.paper,
           overflow: "auto",
-          height: "435px",
+          height: "400px",
         }}
         component="section"
         aria-labelledby="recent-transactions-title"
@@ -74,46 +74,49 @@ export default function RecentTransactions() {
         >
           Transactions List
         </Typography>
-        <List component="ul" style={{ padding: "0" }}>
-          {transactions.map((transaction) => (
-            <li
-              key={transaction.id}
-              aria-label={`Transaction by ${transaction.user} on ${transaction.date}`}
-            >
-              <ListItem>
-                <ListItemAvatar>
-                  <Avatar
-                    sx={{ bgcolor: red[700] }}
-                    aria-label={`${transaction.user} avatar`}
+
+        {/* Start List  */}
+        <List>
+          {transactions.map((transaction) => {
+            return (
+              <React.Fragment key={transaction.id}>
+                <ListItem
+                  sx={{
+                    height: "80px",
+                  }}
+                  secondaryAction={
+                    <Typography sx={{ color: blue[500] }}>
+                      {transaction.amount}
+                    </Typography>
+                  }
+                >
+                  <ListItemAvatar
+                    sx={{
+                      background: theme.palette.primary.main,
+                      height: "60px",
+                      width: "60px",
+                      borderRadius: "50%",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      marginRight: "20px",
+                      fontWeight: "bold",
+                      color: theme.palette.primary.contrastText,
+                    }}
                   >
                     {transaction.user.charAt(0).toUpperCase()}
-                  </Avatar>
-                </ListItemAvatar>
+                  </ListItemAvatar>
 
-                <ListItemText
-                  primary={transaction.user}
-                  secondary={transaction.date}
-                  primaryTypographyProps={{
-                    component: "p",
-                    role: "heading",
-                    "aria-level": 3,
-                  }}
-                  secondaryTypographyProps={{
-                    component: "p",
-                    role: "heading",
-                    "aria-level": 4,
-                  }}
-                />
-
-                <ListItemSecondaryAction>
-                  <Typography variant="body1" color="textPrimary">
-                    {transaction.amount}
-                  </Typography>
-                </ListItemSecondaryAction>
-              </ListItem>
-              <Divider component="li" />
-            </li>
-          ))}
+                  <ListItemText
+                    id={transaction.user}
+                    primary={transaction.user.toUpperCase() }
+                    secondary={transaction.date}
+                  />
+                </ListItem>
+          
+              </React.Fragment>
+            );
+          })}
         </List>
       </Paper>
     </Container>
