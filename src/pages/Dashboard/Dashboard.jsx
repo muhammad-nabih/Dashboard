@@ -44,29 +44,50 @@ export default function Dashboard() {
             minWidth: "400px",
             flexGrow: 1,
             marginBottom: "10px",
+            padding: "30px 20px",
           }}
         >
           <Geography isNotDashboard />
         </Paper>
-        <Paper
-          sx={{
-            height: "500px",
-            minWidth: "360px",
-            flexGrow: 1,
-            marginBottom: "10px",
-          }}
-        >
-          <Bar />
-        </Paper>
+
         <Paper
           sx={{
             height: "500px",
             minWidth: "400px",
             flexGrow: 1,
             marginBottom: "10px",
+            padding: "30px 20px",
           }}
         >
-          <Pie isNotDashboard={false} scheme={"nivo"} />
+          <Typography
+            variant="h5"
+            color={theme.palette.secondary.main}
+            fontWeight={"bold"}
+          >
+            {" "}
+            Programmers Salary
+          </Typography>
+          <Bar isNotDashboard={false} />
+        </Paper>
+
+        <Paper
+          sx={{
+            height: "500px",
+            minWidth: "400px",
+            flexGrow: 1,
+            marginBottom: "10px",
+            padding: "30px 20px",
+          }}
+        >
+          <Typography
+            variant="h5"
+            color={theme.palette.secondary.main}
+            fontWeight={"bold"}
+          >
+            {" "}
+            Campaign
+          </Typography>
+          <Pie isNotDashboard={true} scheme={"nivo"} />
         </Paper>
       </Stack>
     </>
