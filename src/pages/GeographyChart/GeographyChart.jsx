@@ -15,6 +15,7 @@ export default function GeographyChart({ isNotDashboard = true }) {
       />
       <Box
         sx={{
+          overflow: "hidden",
           height: "70vh",
           width: "98%",
           margin: "0 auto",
