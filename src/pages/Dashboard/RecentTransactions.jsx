@@ -85,7 +85,17 @@ export default function RecentTransactions() {
                     height: "80px",
                   }}
                   secondaryAction={
-                    <Typography sx={{ color: blue[500] }}>
+                    <Typography
+                      sx={{
+                        fontWeight: "bold",
+                        color: theme.palette.primary.contrastText,
+                        backgroundColor: theme.palette.primary.main,
+                        padding: "5px 10px",
+                        borderRadius: "5px",
+                        textAlign: "center",
+                        minWidth: "90px",
+                      }}
+                    >
                       {transaction.amount}
                     </Typography>
                   }
@@ -109,11 +119,10 @@ export default function RecentTransactions() {
 
                   <ListItemText
                     id={transaction.user}
-                    primary={transaction.user.toUpperCase() }
+                    primary={transaction.user.toUpperCase()}
                     secondary={transaction.date}
                   />
                 </ListItem>
-          
               </React.Fragment>
             );
           })}
