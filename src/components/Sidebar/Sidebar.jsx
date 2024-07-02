@@ -137,7 +137,7 @@ export default function Sidebar({ handleDrawerClose, open }) {
     <>
       <Drawer variant="permanent" open={open}>
         <DrawerHeader>
-          <IconButton onClick={handleDrawerClose}>
+          <IconButton onClick={handleDrawerClose} aria-label="Close drawer">
             {theme.direction === "rtl" ? (
               <ChevronRightIcon />
             ) : (
@@ -187,7 +187,7 @@ export default function Sidebar({ handleDrawerClose, open }) {
             <Tooltip
               key={item.text}
               placement="right"
-              title={open ? null : item.text}
+              title={open ? "" : item.text}
             >
               <ListItem disablePadding sx={{ display: "block" }}>
                 <ListItemButton
@@ -198,6 +198,7 @@ export default function Sidebar({ handleDrawerClose, open }) {
                     backgroundColor: activeLink(item.path),
                   }}
                   onClick={() => navigate(item.path)}
+                  aria-label={item.text}
                 >
                   <ListItemIcon
                     sx={{
@@ -223,7 +224,7 @@ export default function Sidebar({ handleDrawerClose, open }) {
             <Tooltip
               key={item.text}
               placement="right"
-              title={open ? null : item.text}
+              title={open ? "" : item.text}
             >
               <ListItem disablePadding sx={{ display: "block" }}>
                 <ListItemButton
@@ -234,6 +235,7 @@ export default function Sidebar({ handleDrawerClose, open }) {
                     backgroundColor: activeLink(item.path),
                   }}
                   onClick={() => navigate(item.path)}
+                  aria-label={item.text}
                 >
                   <ListItemIcon
                     sx={{
@@ -259,7 +261,7 @@ export default function Sidebar({ handleDrawerClose, open }) {
             <Tooltip
               key={item.text}
               placement="right"
-              title={open ? null : item.text}
+              title={open ? "" : item.text}
             >
               <ListItem disablePadding sx={{ display: "block" }}>
                 <ListItemButton
@@ -270,6 +272,7 @@ export default function Sidebar({ handleDrawerClose, open }) {
                     px: 2.5,
                     backgroundColor: activeLink(item.path),
                   }}
+                  aria-label={item.text}
                 >
                   <ListItemIcon
                     sx={{

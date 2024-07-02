@@ -1,5 +1,5 @@
 import * as React from "react";
-import { styled, useTheme } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
@@ -7,14 +7,12 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 // =*= -IMPORT UI COMPONENT - =*= //
 import TopBar from "./components/TopBar/TopBar";
 import Sidebar from "./components/Sidebar/Sidebar.jsx";
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = React.useState(
     localStorage.getItem("mode") ?? "light"
   );
-  const location = useLocation();
-  console.log(location.pathname);
 
   const theme = React.useMemo(
     () =>

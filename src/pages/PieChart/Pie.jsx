@@ -1,9 +1,7 @@
 import { ResponsivePie } from "@nivo/pie";
 import { PieChartData } from "./PieChartData";
-import { Box } from "@mui/material";
 import { useTheme } from "@emotion/react";
 export default function Pie({ isNotDashboard, scheme }) {
-  console.log(isNotDashboard);
   const theme = useTheme();
   return (
     <ResponsivePie

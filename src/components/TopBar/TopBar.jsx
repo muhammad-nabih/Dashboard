@@ -95,22 +95,25 @@ export default function TopBar({ open, handleDrawerOpen, setMode }) {
         >
           <MenuIcon />
         </IconButton>
-        {/* Search Bar  */}
-        <Search>
-          <SearchIconWrapper>
-            <SearchIcon />
-          </SearchIconWrapper>
-          <StyledInputBase
-            placeholder="Search…"
-            inputProps={{ "aria-label": "search" }}
-          />
-        </Search>
+        {/* Search Bar */}
+        <Box component="form" role="search" aria-label="Search form">
+          <Search>
+            <SearchIconWrapper>
+              <SearchIcon aria-hidden="true" />
+            </SearchIconWrapper>
+            <StyledInputBase
+              placeholder="Search…"
+              inputProps={{ "aria-label": "search" }}
+            />
+          </Search>
+        </Box>
         <Box sx={{ flexGrow: 1 }} />
         {/*==== Start Icons ====*/}
 
         {mode === "light" ? (
           <IconButton
             color="inherit"
+            aria-label="Switch to dark mode"
             onClick={() => {
               localStorage.setItem("mode", "dark");
               setMode("dark");
@@ -121,6 +124,7 @@ export default function TopBar({ open, handleDrawerOpen, setMode }) {
         ) : (
           <IconButton
             color="inherit"
+            aria-label="Switch to light mode"
             onClick={() => {
               localStorage.setItem("mode", "light");
               setMode("light");
@@ -130,11 +134,11 @@ export default function TopBar({ open, handleDrawerOpen, setMode }) {
           </IconButton>
         )}
 
-        <IconButton color="inherit">
+        <IconButton color="inherit" aria-label="User profile">
           <Person2OutlinedIcon />
         </IconButton>
 
-        <IconButton color="inherit">
+        <IconButton color="inherit" aria-label="Settings">
           <SettingsOutlinedIcon />
         </IconButton>
       </Toolbar>
