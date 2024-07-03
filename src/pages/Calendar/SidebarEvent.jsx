@@ -1,3 +1,4 @@
+import { Divider, ListItem } from "@mui/material";
 import { formatDate } from "../../../node_modules/@fullcalendar/core";
 import { useTheme } from "@emotion/react";
 
@@ -6,42 +7,44 @@ const SidebarEvents = ({ event }) => {
   const { palette } = useTheme();
 
   return (
-    <li
-      key={event.id}
-      style={{
-        listStyle: "none",
-        display: "flex",
-        flexWrap: "wrap",
-        alignItems: "center",
-        padding: "3px 5px",
-        marginBottom: "5px",
-        borderRadius: "5px",
-        backgroundColor: palette.mode === "dark" ? "white" : "#1a252f",
-      }}
-    >
-      <b
+    <>
+      <ListItem
+        key={event.id}
         style={{
-          color: palette.mode === "dark" ? "#1a252f" : "white",
-          fontSize: "13px",
+          listStyle: "none",
+          display: "flex",
+          flexWrap: "wrap",
+          alignItems: "center",
+          padding: " 5px",
+          marginBottom: "5px",
+          borderRadius: "5px",
         }}
       >
-        {formatDate(event.start, {
-          year: "numeric",
-          month: "short",
-          day: "numeric",
-        })}
-      </b>
-      <i
-        style={{
-          padding: "0 5px",
-          color: "#818181",
-          textTransform: "capitalize",
-          fontSize: "12px",
-        }}
-      >
-        {event.title}
-      </i>
-    </li>
+        <b
+          style={{
+            color: palette.text.secondary,
+            fontSize: "13px",
+          }}
+        >
+          {formatDate(event.start, {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+          })}
+        </b>
+        <b
+          style={{
+            padding: "0 5px",
+            color: palette.primary.main,
+            textTransform: "capitalize",
+            fontSize: "14px",
+          }}
+        >
+          {event.title}
+        </b>
+      </ListItem>{" "}
+      <Divider component={"li"} />
+    </>
   );
 };
 

@@ -1,28 +1,33 @@
-import { Paper } from "@mui/material";
+import { List, Paper, Stack, Typography } from "@mui/material";
 import EventAvailableOutlinedIcon from "@mui/icons-material/EventAvailableOutlined";
 import SidebarEvents from "./SidebarEvent";
+
 const SidebarCalendar = ({ currentEvents }) => {
   return (
     <Paper
       sx={{
-        flexBasis: "20%",
+        flexGrow: 1,
         padding: "10px",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "start",
-        alignItems: "center",
+        minWidth: "fit-content",
         gap: 2,
       }}
     >
-      <h2 style={{ color: "#1976d2" }}>
-        <EventAvailableOutlinedIcon />{" "}
-        <span> All Events ({currentEvents.length}) </span>
-      </h2>
-      <ul>
+      <Stack direction={"row"}>
+        <Typography
+          sx={{ display: "flex", alignItems: "center", gap: "3px" }}
+          variant="h6"
+          fontSize={{ xs: ".6rem", sm: ".9rem", md: "1.5rem" }}
+        >
+          <EventAvailableOutlinedIcon />
+          All Events ({currentEvents.length})
+        </Typography>
+      </Stack>
+
+      <List>
         {currentEvents.map((event) => (
           <SidebarEvents key={event.id} event={event} />
         ))}
-      </ul>
+      </List>
     </Paper>
   );
 };

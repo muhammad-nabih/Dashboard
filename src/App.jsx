@@ -56,8 +56,11 @@ function App() {
         />
         <Sidebar handleDrawerClose={handleDrawerClose} open={open} />
 
-        <Box component="main" sx={{ flexGrow: 1, p: 3, overflow: "hidden" }}>
-          <DrawerHeader />
+        <Box
+          component="main"
+          sx={{ flexGrow: 1, padding: "20px 10px", overflow: "hidden" }}
+        >
+          <DrawerHeader  />
           <Outlet />
         </Box>
       </Box>
