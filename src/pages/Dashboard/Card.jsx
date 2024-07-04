@@ -10,6 +10,7 @@ export default function Card({
   percent,
 }) {
   const theme = useTheme();
+
   return (
     <Paper
       sx={{
@@ -24,13 +25,13 @@ export default function Card({
       }}
       aria-label={`Card: ${title}`}
     >
-      <Stack direction={"column"} sx={{ alignItems: "start", gap: "18px" }}>
+      <Stack direction="column" sx={{ alignItems: "start", gap: "18px" }}>
         <Box>{children}</Box>
         <Typography>{numbers}</Typography>
         <Typography>{title}</Typography>
       </Stack>
 
-      <Stack direction={"column"} sx={{ alignItems: "center" }}>
+      <Stack direction="column" sx={{ alignItems: "center" }}>
         <Box sx={{ height: 100, width: 100 }}>
           <Pie scheme={scheme} isNotDashboard={isNotDashboard} />
         </Box>
@@ -39,4 +40,3 @@ export default function Card({
     </Paper>
   );
 }
-

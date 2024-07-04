@@ -1,12 +1,10 @@
-import React from "react";
+
 import { Stack, Typography, useTheme, Box, Paper } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import MainSection from "./MainSection";
 import Cards from "./Cards";
-import LineChart from "../../pages/LineChart/LineChart";
 import RecentTransactions from "./RecentTransactions";
 import Pie from "../../pages/PieChart/Pie";
-import PageDescription from "../../components/PageDescription/PageDescription";
 import Bar from "../../pages/BarChart/Bar";
 import Geography from "../../pages/GeographyChart/Geography";
 import Line from "../../pages/LineChart/Line";

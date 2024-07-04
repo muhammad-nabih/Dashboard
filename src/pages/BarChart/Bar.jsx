@@ -33,7 +33,7 @@ export default function Bar({ isNotDashboard = true }) {
         colors={{ scheme: "paired" }}
         borderColor={{
           from: "color",
-          // @ts-ignore
+
           modifiers: [["darker", "2.1"]],
         }}
         theme={{

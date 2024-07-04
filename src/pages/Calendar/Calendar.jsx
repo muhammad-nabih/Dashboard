@@ -13,6 +13,7 @@ const Calendar = () => {
   const theme = useTheme();
   const [weekendsVisible, setWeekendsVisible] = useState(true);
   const [currentEvents, setCurrentEvents] = useState([]);
+
   const handleWeekendsToggle = () => {
     setWeekendsVisible(!weekendsVisible);
   };
@@ -51,8 +52,7 @@ const Calendar = () => {
   const renderDayHeader = (arg) => {
     const dateStr = arg.date.toISOString().split("T")[0]; // Extract YYYY-MM-DD
     return {
-      // @ts-ignore
-      html: `<a href="/day/${dateStr}" onclick="event.preventDefault();"  style="text-decoration: none; color: ${theme.palette.primary.main}">${arg.text}</a>`,
+      html: `<a href="/day/${dateStr}" onclick="event.preventDefault();" style="text-decoration: none; color: ${theme.palette.primary.main}">${arg.text}</a>`,
     };
   };
 
@@ -66,7 +66,6 @@ const Calendar = () => {
       flexDirection={{ sm: "column", md: "row" }}
     >
       <SidebarCalendar
-        // @ts-ignore
         weekendsVisible={Boolean(weekendsVisible)}
         handleWeekendsToggle={handleWeekendsToggle}
         currentEvents={currentEvents}

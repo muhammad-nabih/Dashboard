@@ -8,8 +8,6 @@ import {
   ListItem,
   ListItemText,
   ListItemAvatar,
-  Divider,
-  Stack,
 } from "@mui/material";
 import { blue, red } from "@mui/material/colors";
 import React from "react";

@@ -5,20 +5,20 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import faqData from "./faqData";
+import { Box } from "@mui/material";
 
 export default function FaqPage() {
   const [expanded, setExpanded] = React.useState(false);
 
-  const handleChange = (panel) => (event, isExpanded) => {
+  const handleChange = (panel) => (isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
 
   return (
-    <div>
+    <Box>
       {faqData.map((item) => (
         <Accordion
           key={item.id}
-          // @ts-ignore
           expanded={expanded === item.id}
           onChange={handleChange(item.id)}
         >
@@ -41,6 +41,6 @@ export default function FaqPage() {
           </AccordionDetails>
         </Accordion>
       ))}
-    </div>
+    </Box>
   );
 }

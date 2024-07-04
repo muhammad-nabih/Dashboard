@@ -20,11 +20,10 @@ export default function Pie({ isNotDashboard, scheme, showLanguage = true }) {
       borderWidth={1}
       borderColor={{
         from: "color",
-        // @ts-ignore
+
         modifiers: [["darker", "0.6"]],
       }}
       arcLinkLabelsSkipAngle={10}
-      // @ts-ignore
       arcLinkLabelsTextColor={theme.palette.text.primary}
       arcLinkLabelsThickness={2}
       arcLinkLabelsColor={{ from: "color" }}
@@ -117,7 +116,7 @@ export default function Pie({ isNotDashboard, scheme, showLanguage = true }) {
                 itemsSpacing: 0,
                 itemWidth: 100,
                 itemHeight: 18,
-                // @ts-ignore
+
                 itemTextColor: theme.palette.text.primary,
                 itemDirection: "left-to-right",
                 itemOpacity: 1,
@@ -127,7 +126,6 @@ export default function Pie({ isNotDashboard, scheme, showLanguage = true }) {
                   {
                     on: "hover",
                     style: {
-                      // @ts-ignore
                       itemTextColor: theme.palette.text.secondary,
                     },
                   },
@@ -139,7 +137,7 @@ export default function Pie({ isNotDashboard, scheme, showLanguage = true }) {
       theme={{
         text: {
           fontSize: 12,
-          // @ts-ignore
+
           fill: theme.palette.text.primary,
           outlineWidth: 0,
           outlineColor: "transparent",
@@ -147,7 +145,6 @@ export default function Pie({ isNotDashboard, scheme, showLanguage = true }) {
         axis: {
           domain: {
             line: {
-              // @ts-ignore
               stroke: theme.palette.divider,
               strokeWidth: 1,
             },
@@ -155,7 +152,7 @@ export default function Pie({ isNotDashboard, scheme, showLanguage = true }) {
           legend: {
             text: {
               fontSize: 12,
-              // @ts-ignore
+
               fill: theme.palette.text.primary,
               outlineWidth: 0,
               outlineColor: "transparent",
@@ -163,13 +160,12 @@ export default function Pie({ isNotDashboard, scheme, showLanguage = true }) {
           },
           ticks: {
             line: {
-              // @ts-ignore
               stroke: theme.palette.divider,
               strokeWidth: 1,
             },
             text: {
               fontSize: 11,
-              // @ts-ignore
+
               fill: theme.palette.text.primary,
               outlineWidth: 0,
               outlineColor: "transparent",
@@ -178,7 +174,6 @@ export default function Pie({ isNotDashboard, scheme, showLanguage = true }) {
         },
         grid: {
           line: {
-            // @ts-ignore
             stroke: theme.palette.divider,
             strokeWidth: 1,
           },
@@ -187,7 +182,7 @@ export default function Pie({ isNotDashboard, scheme, showLanguage = true }) {
           title: {
             text: {
               fontSize: 11,
-              // @ts-ignore
+
               fill: theme.palette.text.primary,
               outlineWidth: 0,
               outlineColor: "transparent",
@@ -195,7 +190,7 @@ export default function Pie({ isNotDashboard, scheme, showLanguage = true }) {
           },
           text: {
             fontSize: 12,
-            // @ts-ignore
+
             fill: theme.palette.text.primary,
             outlineWidth: 0,
             outlineColor: "transparent",
@@ -204,7 +199,7 @@ export default function Pie({ isNotDashboard, scheme, showLanguage = true }) {
             line: {},
             text: {
               fontSize: 10,
-              // @ts-ignore
+
               fill: theme.palette.text.primary,
               outlineWidth: 0,
               outlineColor: "transparent",
@@ -214,7 +209,7 @@ export default function Pie({ isNotDashboard, scheme, showLanguage = true }) {
         annotations: {
           text: {
             fontSize: 13,
-            // @ts-ignore
+
             fill: theme.palette.text.primary,
             outlineWidth: 2,
             outlineColor: "#ffffff",
@@ -244,9 +239,8 @@ export default function Pie({ isNotDashboard, scheme, showLanguage = true }) {
         tooltip: {
           wrapper: {},
           container: {
-            // @ts-ignore
             background: theme.palette.background.default,
-            // @ts-ignore
+
             color: theme.palette.text.primary,
             fontSize: 12,
           },

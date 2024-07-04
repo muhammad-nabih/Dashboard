@@ -1,7 +1,7 @@
 import { Route } from "react-router-dom";
 import App from "../App.jsx";
 import Dashboard from "../pages/Dashboard/Dashboard.jsx";
-import ManageTeam from "../pages/ManageTeam/ManageTeam";
+import ManageTeam from "../pages/ManageTeam/ManageTeam.jsx";
 import ContactsInformation from "../pages/ContactsInformation/ContactsInformation";
 import InvoicesBalances from "../pages/InvoicesBalances/InvoicesBalances";
 import Calendar from "../pages/Calendar/Calendar";

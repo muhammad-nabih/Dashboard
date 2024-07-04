@@ -10,11 +10,10 @@ import {
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import {
-  CheckCircleOutline,
   CheckCircleOutlineOutlined,
 } from "@mui/icons-material";
 export default function ProfileForm() {
-  const [userInfo, setUserInfo] = useState({});
+
 
   const [role, setRole] = useState("User");
   const roleTheme =
@@ -53,10 +52,10 @@ export default function ProfileForm() {
   const onSubmit = (data) => {
     setOpen(true);
     setRole(data.Role);
-    setUserInfo(data);
+
   };
 
-  const handleClose = (event, reason) => {
+  const handleClose = (reason) => {
     if (reason === "clickaway") {
       return;
     }

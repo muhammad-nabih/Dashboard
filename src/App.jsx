@@ -18,7 +18,6 @@ function App() {
     () =>
       createTheme({
         palette: {
-          // @ts-ignore
           mode,
         },
       }),
@@ -60,7 +59,7 @@ function App() {
           component="main"
           sx={{ flexGrow: 1, padding: "20px 10px", overflow: "hidden" }}
         >
-          <DrawerHeader  />
+          <DrawerHeader />
           <Outlet />
         </Box>
       </Box>

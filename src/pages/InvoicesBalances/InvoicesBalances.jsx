@@ -8,7 +8,6 @@ export default function InvoicesBalances() {
         slots={{ toolbar: GridToolbar }}
         checkboxSelection
         rows={rows}
-        // @ts-ignore
         columns={columns}
       />
     </Box>

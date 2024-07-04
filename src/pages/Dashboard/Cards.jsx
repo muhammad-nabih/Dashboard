@@ -2,7 +2,6 @@ import { Stack } from "@mui/material";
 import Card from "./Card";
 import { cardData } from "./CardData";
 
-
 export default function Cards() {
   return (
     <Stack direction="row" sx={{ gap: "10px", flexWrap: "wrap" }}>
@@ -20,4 +19,3 @@ export default function Cards() {
     </Stack>
   );
 }
-

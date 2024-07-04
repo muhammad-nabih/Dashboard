@@ -12,7 +12,7 @@ const SidebarCalendar = ({ currentEvents }) => {
         gap: 2,
       }}
     >
-      <Stack direction={"row"}>
+      <Stack direction="row">
         <Typography
           sx={{ display: "flex", alignItems: "center", gap: "3px" }}
           variant="h6"

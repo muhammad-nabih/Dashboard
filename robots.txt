@@ -1,6 +1,10 @@
 User-agent: *
 Disallow: /private/
-Allow: /
+Allow: /public/
 
 Sitemap: https://admin-dashboard-2025.netlify.app/sitemap.xml
+
+
+
+
 

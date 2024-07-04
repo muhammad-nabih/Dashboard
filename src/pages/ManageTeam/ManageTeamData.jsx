@@ -4,7 +4,6 @@ import {
   SecurityOutlined,
   LockOpenOutlined,
 } from "@mui/icons-material";
-import { useTheme } from "@emotion/react";
 
 export const rows = [
   {
