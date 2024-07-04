@@ -27,7 +27,7 @@ export default function Bar({ isNotDashboard = true }) {
           bottom: isNotDashboard ? 80 : 20,
           left: isNotDashboard ? 80 : 60,
         }}
-        padding={0.2}
+        padding={0.1}
         valueScale={{ type: "linear" }}
         indexScale={{ type: "band", round: true }}
         colors={{ scheme: "paired" }}

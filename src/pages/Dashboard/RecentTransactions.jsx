@@ -35,7 +35,11 @@ const transactions = [
 export default function RecentTransactions() {
   const theme = useTheme();
   return (
-    <Container component="main" aria-labelledby="main-header">
+    <Container
+      component="main"
+      aria-labelledby="main-header"
+      sx={{ padding: "0px" }}
+    >
       <Box
         component="header"
         display="flex"
@@ -83,6 +87,7 @@ export default function RecentTransactions() {
                 <ListItem
                   sx={{
                     height: "80px",
+                    padding: "0 0 0 5px",
                   }}
                   secondaryAction={
                     <Typography
@@ -90,10 +95,12 @@ export default function RecentTransactions() {
                         fontWeight: "bold",
                         color: theme.palette.primary.contrastText,
                         backgroundColor: theme.palette.primary.main,
-                        padding: "5px 10px",
+                        padding: "5px ",
                         borderRadius: "5px",
                         textAlign: "center",
-                        minWidth: "90px",
+                        width: "70px",
+                        fontSize: { xs: ".7rem", md: ".8rem", lg: "1rem" },
+                        position: "static",
                       }}
                     >
                       {transaction.amount}
@@ -103,14 +110,15 @@ export default function RecentTransactions() {
                   <ListItemAvatar
                     sx={{
                       background: theme.palette.primary.main,
-                      height: "60px",
-                      width: "60px",
+                      height: "45px",
+                      width: "45px",
                       borderRadius: "50%",
                       display: "flex",
                       justifyContent: "center",
                       alignItems: "center",
-                      marginRight: "20px",
+                      marginRight: "10px",
                       fontWeight: "bold",
+                      minWidth: "45px",
                       color: theme.palette.primary.contrastText,
                     }}
                   >
@@ -119,8 +127,27 @@ export default function RecentTransactions() {
 
                   <ListItemText
                     id={transaction.user}
-                    primary={transaction.user.toUpperCase()}
-                    secondary={transaction.date}
+                    primary={
+                      <Typography
+                        sx={{
+                          fontWeight: "bold",
+                          fontSize: { xs: ".8rem", md: ".9rem", lg: "1.1rem" },
+                          color: theme.palette.primary.main,
+                        }}
+                      >
+                        {transaction.user.toUpperCase()}
+                      </Typography>
+                    }
+                    secondary={
+                      <Typography
+                        sx={{
+                          fontWeight: "bold",
+                          fontSize: { xs: ".7rem", md: ".8rem", lg: "1rem" },
+                        }}
+                      >
+                        {transaction.date}
+                      </Typography>
+                    }
                   />
                 </ListItem>
               </React.Fragment>

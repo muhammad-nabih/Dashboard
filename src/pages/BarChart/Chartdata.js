@@ -1,6 +1,6 @@
 export const chartData = [
   {
-    country: "AD",
+    country: "Egypt",
     2018: 150,
     2019: 120,
     2020: 230,
@@ -10,7 +10,7 @@ export const chartData = [
     2024: 80,
   },
   {
-    country: "AE",
+    country: "Saudi",
     2018: 130,
     2019: 140,
     2020: 200,
@@ -20,7 +20,7 @@ export const chartData = [
     2024: 90,
   },
   {
-    country: "AF",
+    country: "Qatar",
     2018: 100,
     2019: 150,
     2020: 190,
@@ -30,7 +30,7 @@ export const chartData = [
     2024: 70,
   },
   {
-    country: "AG",
+    country: "Kuwait",
     2018: 180,
     2019: 160,
     2020: 220,
@@ -40,7 +40,7 @@ export const chartData = [
     2024: 60,
   },
   {
-    country: "AI",
+    country: "Bahrain",
     2018: 170,
     2019: 130,
     2020: 240,
@@ -50,7 +50,7 @@ export const chartData = [
     2024: 50,
   },
   {
-    country: "AL",
+    country: "Emirates",
     2018: 160,
     2019: 170,
     2020: 210,

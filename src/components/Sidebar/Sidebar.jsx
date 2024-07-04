@@ -155,7 +155,7 @@ export default function Sidebar({ handleDrawerClose, open }) {
         >
           <Avatar
             alt="Mohamed Nabih"
-            src="/mohamed.png"
+            src="/mohamed.webp"
             sx={{
               width: open ? 66 : 30,
               height: open ? 66 : 30,

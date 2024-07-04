@@ -1,7 +1,7 @@
 import { ResponsivePie } from "@nivo/pie";
 import { PieChartData } from "./PieChartData";
 import { useTheme } from "@emotion/react";
-export default function Pie({ isNotDashboard, scheme }) {
+export default function Pie({ isNotDashboard, scheme, showLanguage = true }) {
   const theme = useTheme();
   return (
     <ResponsivePie
@@ -105,33 +105,37 @@ export default function Pie({ isNotDashboard, scheme }) {
           id: "lines",
         },
       ]}
-      legends={[
-        {
-          anchor: "bottom",
-          direction: "row",
-          justify: false,
-          translateX: 0,
-          translateY: 56,
-          itemsSpacing: 0,
-          itemWidth: 100,
-          itemHeight: 18,
-          // @ts-ignore
-          itemTextColor: theme.palette.text.primary,
-          itemDirection: "left-to-right",
-          itemOpacity: 1,
-          symbolSize: 18,
-          symbolShape: "circle",
-          effects: [
-            {
-              on: "hover",
-              style: {
+      legends={
+        showLanguage
+          ? [
+              {
+                anchor: "bottom",
+                direction: "row",
+                justify: false,
+                translateX: 0,
+                translateY: 56,
+                itemsSpacing: 0,
+                itemWidth: 100,
+                itemHeight: 18,
                 // @ts-ignore
-                itemTextColor: theme.palette.text.secondary,
+                itemTextColor: theme.palette.text.primary,
+                itemDirection: "left-to-right",
+                itemOpacity: 1,
+                symbolSize: 18,
+                symbolShape: "circle",
+                effects: [
+                  {
+                    on: "hover",
+                    style: {
+                      // @ts-ignore
+                      itemTextColor: theme.palette.text.secondary,
+                    },
+                  },
+                ],
               },
-            },
-          ],
-        },
-      ]}
+            ]
+          : []
+      }
       theme={{
         text: {
           fontSize: 12,

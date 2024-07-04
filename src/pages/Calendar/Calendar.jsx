@@ -49,7 +49,11 @@ const Calendar = () => {
   };
 
   const renderDayHeader = (arg) => {
-    return { html: `<a href="/day/${arg.date.toISOString()}">${arg.text}</a>` };
+    const dateStr = arg.date.toISOString().split("T")[0]; // Extract YYYY-MM-DD
+    return {
+      // @ts-ignore
+      html: `<a href="/day/${dateStr}" onclick="event.preventDefault();"  style="text-decoration: none; color: ${theme.palette.primary.main}">${arg.text}</a>`,
+    };
   };
 
   return (

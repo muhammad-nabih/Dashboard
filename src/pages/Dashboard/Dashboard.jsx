@@ -27,7 +27,7 @@ export default function Dashboard() {
             sx={{ height: "500px", display: "flex", alignItems: "center" }}
             aria-label="Line Chart"
           >
-            <Line />
+            <Line isNotDashboard={false} />
           </Paper>
         </Grid>
         <Grid xs={12} sm={12} md={6} lg={4}>
@@ -42,10 +42,10 @@ export default function Dashboard() {
         <Paper
           sx={{
             height: "500px",
-            minWidth: "400px",
+            minWidth: "250",
             flexGrow: 1,
             marginBottom: "10px",
-            padding: "30px 20px",
+            padding: 0,
           }}
           aria-label="Geography Chart"
         >
@@ -55,19 +55,20 @@ export default function Dashboard() {
         <Paper
           sx={{
             height: "500px",
-            minWidth: "400px",
+            minWidth: "300px",
             flexGrow: 1,
             marginBottom: "10px",
-            padding: "30px 20px",
+            padding: 0,
           }}
           aria-label="Programmers Salary Bar Chart"
         >
           <Typography
             component={"p"}
-            sx={{ fontSize: "25px" }}
+            sx={{ padding: "10px 20px" }}
             variant="body2"
             color={theme.palette.secondary.main}
             fontWeight={"bold"}
+            fontSize={"1.5rem"}
           >
             Programmers Salary
           </Typography>
@@ -77,23 +78,24 @@ export default function Dashboard() {
         <Paper
           sx={{
             height: "500px",
-            minWidth: "400px",
+            minWidth: "300px",
             flexGrow: 1,
             marginBottom: "10px",
-            padding: "30px 20px",
+            padding: 0,
           }}
           aria-label="Campaign Pie Chart"
         >
           <Typography
             component={"p"}
-            sx={{ fontSize: "25px" }}
+            fontSize={"1.5rem"}
             variant="body2"
             color={theme.palette.secondary.main}
             fontWeight={"bold"}
+            sx={{ padding: "10px 20px" }}
           >
             Campaign
           </Typography>
-          <Pie isNotDashboard={true} scheme={"nivo"} />
+          <Pie isNotDashboard={true} showLanguage={false} scheme={"nivo"} />
         </Paper>
       </Stack>
     </>

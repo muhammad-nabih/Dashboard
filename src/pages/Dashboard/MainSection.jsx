@@ -6,12 +6,21 @@ export default function MainSection() {
   return (
     <Stack
       direction="row"
-      sx={{ justifyContent: "space-between", alignItems: "center" }}
+      flexWrap={"wrap"}
+      gap={2}
+      sx={{
+        justifyContent: "space-between",
+        alignItems: "center",
+        marginBottom: "10px",
+      }}
     >
       <PageDescription title="Dashboard" description="Welcome to Dashboard" />
       <Button
         variant="contained"
-        sx={{ padding: "8px 10px" }}
+        sx={{
+          padding: "5px 8px",
+          fontSize: { xs: ".5rem", md: ".8rem", lg: "1rem" },
+        }}
         startIcon={<DownloadOutlined />}
         aria-label="Download Reports"
       >
