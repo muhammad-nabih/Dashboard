@@ -19,7 +19,7 @@ const SidebarCalendar = ({ currentEvents }) => {
           fontSize={{ xs: ".6rem", sm: ".9rem", md: "1.5rem" }}
         >
           <EventAvailableOutlinedIcon />
-          All Events ({currentEvents.length})
+          All Events [ {currentEvents.length} ]
         </Typography>
       </Stack>
 

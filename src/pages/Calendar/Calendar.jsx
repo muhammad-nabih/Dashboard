@@ -48,6 +48,10 @@ const Calendar = () => {
     setCurrentEvents(events);
   };
 
+  const renderDayHeader = (arg) => {
+    return { html: `<a href="/day/${arg.date.toISOString()}">${arg.text}</a>` };
+  };
+
   return (
     <Stack
       sx={{
@@ -90,6 +94,7 @@ const Calendar = () => {
           eventContent={RenderEventContent}
           eventClick={handleEventClick}
           eventsSet={handleEvents}
+          dayHeaderContent={renderDayHeader}
         />
       </Paper>
     </Stack>
